@@ -1,8 +1,11 @@
 from flask import Flask, request, jsonify
-from flask_cors import CORS  # 👈 Add this line
+from flask_cors import CORS
 
 app = Flask(__name__)
-CORS(app)  # 👈 Add this line
+
+# Temporarily allow all origins (for development/Shopify preview)
+CORS(app, resources={r"/*": {"origins": "*"}}, supports_credentials=True)
+
 
 # --- simple product catalog (expand later) -----------------
 PRODUCTS = [
@@ -47,31 +50,43 @@ PRODUCTS = [
     {"tag": "journaling", "name": "Mood Tracker Notebook", "image_url": "https://cdn.com/mood_tracker.png", "product_url": "https://yourdropshipsource.com/mood_tracker", "blurb": "Track your emotions and recognize patterns over time."}
 ]
 # ---------- helper functions --------------------------------
-def assign_tags(answers: dict) -> list[str]:
-    """Return a list of product-tags based on survey answers."""
+def assign_tags(answers):
     tags = []
-    if answers.get("How well do you sleep most nights?") == "I struggle to fall or stay asleep":
-        tags.append("sleep_aid")
-    if answers.get("How often do you feel confident in yourself or your appearance?") == "Rarely":
-        tags.append("confidence_boost")
+
+    if answers.get("sleep") == "I struggle to fall or stay asleep":
+        tags.append("sleep_issues")
+    if answers.get("snoring") == "Yes":
+        tags.append("snoring")
+    if answers.get("confidence") == "Rarely":
+        tags.append("confidence")
+    if answers.get("energy") == "I feel tired or low energy daily":
+        tags.append("energy")
+    if answers.get("skin") == "Dry, irritated, or acne-prone":
+        tags.append("skin")
+    if answers.get("productivity") == "I am very unproductive":
+        tags.append("productivity")
+    if answers.get("stress") == "I'm stressed almost every day":
+        tags.append("stress")
+    if answers.get("social") == "Yes, I feel uncomfortable in most social settings":
+        tags.append("social")
+    if answers.get("posture") == "Yes, I often feel physical strain":
+        tags.append("posture")
+    if answers.get("journaling") == "Yes, I feel like journaling could help":
+        tags.append("journaling")
+
     return tags
 
-def match_products(tags: list[str]) -> list[dict]:
-    """Return product dicts whose tag is in tags list."""
-    return [p for p in PRODUCTS if p["tag"] in tags]
+def match_products(tags):
+    return [product for product in PRODUCTS if product["tag"] in tags]
 
-# --------------- API endpoint --------------------------------
 @app.route("/analyze", methods=["POST"])
 def analyze():
-    data = request.get_json()
-
-    # Expect simple payload: { "answers": { question: answer, … } }
+    data = request.json
     answers = data.get("answers", {})
+    free_text = data.get("free_text", "")
     tags = assign_tags(answers)
-    products = match_products(tags)
+    matched_products = match_products(tags)
+    return jsonify({"tags": tags, "products": matched_products})
 
-    return jsonify({"tags": tags, "products": products})
-
-# ----------------- local run ---------------------------------
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000)
+    app.run(debug=True)
