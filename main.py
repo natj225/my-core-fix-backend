@@ -9,7 +9,7 @@ PRODUCTS = [
     {
         "tag": "sleep_aid",
         "name": "Sleep Reset Mist",
-        "image_url": "https://cdn.com/sleepmist.png",
+        "image_url": "https://m.media-amazon.com/images/I/51tfGxSjchL._UF1000,1000_QL80_.jpg",
         "product_url": "https://yourstore.com/products/sleep-reset-mist",
         "blurb": "Helps you drift off faster and enjoy deeper sleep."
     },
