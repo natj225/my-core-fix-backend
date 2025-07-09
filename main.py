@@ -1,6 +1,8 @@
 from flask import Flask, request, jsonify
+from flask_cors import CORS  # 👈 Add this line
 
 app = Flask(__name__)
+CORS(app)  # 👈 Add this line
 
 # --- simple product catalog (expand later) -----------------
 PRODUCTS = [
