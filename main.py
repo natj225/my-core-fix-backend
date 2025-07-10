@@ -51,21 +51,23 @@ def assign_tags(answers):
 
     if answers.get("Do you or your partner notice snoring?") == "Yes":
         tags.append("snoring")
-    if answers.get("How often do you feel confident in your appearance?") == "Rarely":
+    if answers.get("How often do you feel confident in your appearance?") == "Never":
         tags.append("confidence")
-    if answers.get("Describe your typical mood or energy level") in ["Low energy", "Irritable"]:
+    if answers.get("Do you experience low energy throughout the day?") == "Yes":
         tags.append("energy")
-    if answers.get("How would you describe your skin condition?") in ["Dry", "Oily", "Acne-prone"]:
+    if answers.get("How well do you typically sleep at night?") == "Poorly":
         tags.append("skin")
-    if answers.get("Do you find social settings stressful or awkward?") in ["Yes", "Sometimes"]:
+    if answers.get("Do you follow a regular daily routine?") == "Not really":
         tags.append("social")
-    if answers.get("How disciplined or productive are you daily?") == "Unmotivated":
+    if answers.get("How often do you feel overwhelmed or stressed?") == "Almost daily":
         tags.append("productivity")
-    if answers.get("Do you experience frequent stress or overwhelm?") in ["Yes, regularly", "Occasionally"]:
+    if answers.get("How would you describe you skin health?") == "Problematic":
         tags.append("stress")
-    if answers.get("Do you get tired easily or depend on caffeine?") in ["Yes, constantly", "Only in the morning"]:
+    if answers.get("Do you feel mentally sharp and focused?") == "Rarely":
         tags.append("caffeine")
-    if answers.get("Is there anything else you'd like help with?"):
+    if answers.get("How frequently do you excercise or move your body?") == "Never":
+        tags.append("journaling")
+    if answers.get("Do you rely on caffine to get through your day?") == "Yes":
         tags.append("journaling")
 
     return tags
