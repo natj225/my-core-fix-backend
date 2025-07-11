@@ -61,13 +61,13 @@ def assign_tags(answers):
         tags.append("social")
     if answers.get("How often do you feel overwhelmed or stressed?") == "Almost daily":
         tags.append("productivity")
-    if answers.get("How would you describe you skin health?") == "Problematic":
+    if answers.get("How would you describe your skin health?") == "Problematic":
         tags.append("stress")
     if answers.get("Do you feel mentally sharp and focused?") == "Rarely":
         tags.append("caffeine")
-    if answers.get("How frequently do you excercise or move your body?") == "Never":
+    if answers.get("How frequently do you exercise or move your body?") == "Never":
         tags.append("journaling")
-    if answers.get("Do you rely on caffine to get through your day?") == "Yes":
+    if answers.get("Do you rely on caffeine to get through your day?") == "Yes":
         tags.append("journaling")
 
     return tags
