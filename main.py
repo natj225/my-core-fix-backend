@@ -10,11 +10,11 @@ CORS(app, resources={r"/*": {"origins": "*"}}, supports_credentials=True)
 # --- simple product catalog (expand later) -----------------
 PRODUCTS = [
     # Snoring
-    {"tag": "snoring", "name": "Anti-Snore Chin Strap", "image_url": "https://s.hdnux.com/photos/13/33/46/2996622/22/rawImage.jpg", "product_url": "https://yourdropshipsource.com/snore_chinstrap", "blurb": "Comfortably keeps your mouth closed to reduce snoring."},
-    {"tag": "snoring", "name": "Nasal Dilator Set", "image_url": "https://s.hdnux.com/photos/13/33/46/2996622/22/rawImage.jpg", "product_url": "https://yourdropshipsource.com/nasal_dilator", "blurb": "Opens nasal passages to improve breathing and reduce snoring."},
+    {"tag": "sleep", "name": "Anti-Snore Chin Strap", "image_url": "https://s.hdnux.com/photos/13/33/46/2996622/22/rawImage.jpg", "product_url": "https://yourdropshipsource.com/snore_chinstrap", "blurb": "Comfortably keeps your mouth closed to reduce snoring."},
+    {"tag": "sleep", "name": "Nasal Dilator Set", "image_url": "https://s.hdnux.com/photos/13/33/46/2996622/22/rawImage.jpg", "product_url": "https://yourdropshipsource.com/nasal_dilator", "blurb": "Opens nasal passages to improve breathing and reduce snoring."},
 
     # Confidence
-    {"tag": "confidence", "name": "Confidence Boost Journal", "image_url": "https://s.hdnux.com/photos/13/33/46/2996622/22/rawImage.jpg", "product_url": "https://yourdropshipsource.com/confidence_journal", "blurb": "Daily prompts to reinforce self-worth and personal strength."},
+    {"tag": "skin_health", "name": "Confidence Boost Journal", "image_url": "https://s.hdnux.com/photos/13/33/46/2996622/22/rawImage.jpg", "product_url": "https://yourdropshipsource.com/confidence_journal", "blurb": "Daily prompts to reinforce self-worth and personal strength."},
     {"tag": "confidence", "name": "Posture Enhancer Tape", "image_url": "https://s.hdnux.com/photos/13/33/46/2996622/22/rawImage.jpg", "product_url": "https://yourdropshipsource.com/posture_tape", "blurb": "Improves appearance and posture for a more confident look."},
 
     # Energy
@@ -49,26 +49,68 @@ PRODUCTS = [
 def assign_tags(answers):
     tags = []
 
-    if answers.get("Do you or your partner notice snoring?") == "Yes":
-        tags.append("snoring")
-    if answers.get("How often do you feel confident in your appearance?") == "Never":
-        tags.append("confidence")
-    if answers.get("Do you experience low energy throughout the day?") == "Yes":
+    if answers.get("Do you experience dry or flaky skin?") in ["Yes", "Sometimes", "Not sure"]:
+        tags.append("skin_texture")
+        if answers.get("Are you looking for a moisturizer suitable for sensitive or eczema-prone skin?") == "Yes":
+            tags.append("dry_skin")
+        if answers.get("Are you looking for a serum or mask that provides overnight hydration?") == "Yes":
+            tags.append("hydrating_mask")
+
+    # Acne
+    if answers.get("Do you frequently deal with pimples, acne, blackheads, or clogged pores?") in ["Yes", "Sometimes", "Not sure"]:
+        tags.append("skin_health")
+        if answers.get("Are you interested in spot treatments or patches to reduce breakouts overnight?") == "Yes":
+            tags.append("acne")
+        if answers.get("Would you be open to using salicylic acid or adapalene (retinoid) treatments for acne?") == "Yes":
+            tags.append("retinoid")
+
+    # Sleep
+    if answers.get("Do you have trouble falling asleep or staying asleep at night?") in ["Yes", "Sometimes", "Not sure"]:
+        tags.append("sleep")
+        if answers.get("Are you looking for a non-habit-forming sleep supplement?") == "Yes":
+            tags.append("sleep_supplement")
+        if answers.get("Are you interested in physical products (e.g., white noise machines or nasal strips) that promote better sleep?") == "Yes":
+            tags.append("sleep_aids")
+
+    # Energy
+    if answers.get("Do you experience low energy or fatigue during the day?") in ["Yes", "Sometimes", "Not sure"]:
         tags.append("energy")
-    if answers.get("How well do you typically sleep at night?") == "Poorly":
-        tags.append("skin")
-    if answers.get("Do you follow a regular daily routine?") == "Not really":
-        tags.append("social")
-    if answers.get("How often do you feel overwhelmed or stressed?") == "Almost daily":
-        tags.append("productivity")
-    if answers.get("How would you describe your skin health?") == "Problematic":
+        if answers.get("Would you prefer gummies, capsules, or softgels for your energy supplements?") == "Yes":
+            tags.append("energy_gummies")
+        if answers.get("Are you looking for a caffeine-free energy booster?") == "Yes":
+            tags.append("caffeine_free_energy")
+
+    # Stress
+    if answers.get("Are you looking to reduce your stress or anxiety levels?") in ["Yes", "Maybe", "Not sure"]:
         tags.append("stress")
-    if answers.get("Do you feel mentally sharp and focused?") == "Rarely":
-        tags.append("caffeine")
-    if answers.get("How frequently do you exercise or move your body?") == "Never":
-        tags.append("journaling")
-    if answers.get("Do you rely on caffeine to get through your day?") == "Yes":
-        tags.append("journaling")
+        if answers.get("Do you prefer ashwagandha or other adaptogens for managing stress??") == "Yes":
+            tags.append("ashwagandha")
+        if answers.get("Would you rather take stress support in gummy or capsule form?") == "Yes":
+            tags.append("stress_gummies")
+
+    # Eye care
+    if answers.get("Are your eyes dry, red, or irritated frequently??") in ["Almost daily", "Occasionally", "Not sure"]:
+        tags.append("eyes")
+        if answers.get("Are you interested in products that reduce puffiness or dark circles under your eyes?") == "Yes":
+            tags.append("eye_care")
+        if answers.get("Do you prefer eye drops or under-eye patches for your routine?") == "Yes":
+            tags.append("eye_drops")
+
+    # Hair care
+    if answers.get("Do you struggle with hair loss or frizzy/dry hair?") in ["Almost daily", "Occasionally", "Not sure"]:
+        tags.append("hair")
+        if answers.get("Do you want to boost hair growth or thickness using supplements?") == "Yes":
+            tags.append("hair_growth")
+        if answers.get("Are you looking for products that improve your hair's shine and smoothness?") == "Yes":
+            tags.append("hair_smoothness")
+
+    # Minimalist
+    if answers.get("Are you a minimalist who prefers a simple, low-maintenance routine?") in ["Yes", "Maybe", "Not sure"]:
+        tags.append("convenient")
+        if answers.get("Would you like recommendations for versatile products (e.g., facial cleansers that double as makeup removers)?") == "Yes":
+            tags.append("minimalist_cleanser")
+        if answers.get("Are you looking for travel-friendly or multi-use products?") == "Yes":
+            tags.append("travel_friendly")
 
     return tags
 
