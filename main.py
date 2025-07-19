@@ -25,7 +25,7 @@ def assign_tags(answers):
     tags = []
 
     if answers.get("Do you experience dry or flaky skin?") in ["Yes", "Sometimes", "Not sure"]:
-        tags.append("skin_texture")
+        tags.append("face_care")
         if answers.get("Are you looking for a moisturizer suitable for sensitive or eczema-prone skin?") == "Yes":
             tags.append("dry_skin")
         if answers.get("Are you looking for a serum or mask that provides overnight hydration?") == "Yes":
