@@ -11,12 +11,12 @@ CORS(app, resources={r"/*": {"origins": "*"}}, supports_credentials=True)
 PRODUCTS = [
     # Snoring
      {
-    tag: "face-care",
-    name: "Aloe Rose Hydration Mist",
-    image_url: "https://mycorefix.com/cdn/shop/files/61gkFcU2s7L._SL1500.jpg",
-    product_url: "",
-    blurb: "Refreshing face spray with aloe, rosewater, and botanicals to hydrate and revive skin.",
-    variant_id: "8585866149948"
+    "tag": "face-care",
+    "name": "Aloe Rose Hydration Mist",
+    "image_url": "https://mycorefix.com/cdn/shop/files/61gkFcU2s7L._SL1500.jpg",
+    "product_url": "",
+    "blurb": "Refreshing face spray with aloe, rosewater, and botanicals to hydrate and revive skin.",
+    "variant_id": "8585866149948"
   }
 
 ]
