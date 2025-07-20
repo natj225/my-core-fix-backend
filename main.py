@@ -8,8 +8,7 @@ CORS(app, resources={r"/*": {"origins": "*"}}, supports_credentials=True)
 
 
 # --- simple product catalog (expand later) -----------------
-const products = [
-  {
+PRODUCTS = [
     {
     "tag": "face-towels",
     "name": "Clean Towels XL Face Wipes",
@@ -571,7 +570,7 @@ const products = [
             "Suitable for all skin types"
         ]
   }
-];
+]
 
 
 def assign_tags(answers):
