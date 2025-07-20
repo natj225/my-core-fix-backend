@@ -563,8 +563,8 @@ const products = [
     "image_url": "https://mycorefix.com/cdn/shop/files/61gkFcU2s7L._SL1500.jpg",
     "product_url": "",
     "blurb": "Refreshing face spray with aloe, rosewater, and botanicals to hydrate and revive skin.",
-    "variant_id": “43254188572732”,
-    "Price": “7.99”,
+    "variant_id": "43254188572732",
+    "Price": "7.99",
     "benefits": [
             "Instantly hydrates skin",
             "Soothes redness and irritation",
