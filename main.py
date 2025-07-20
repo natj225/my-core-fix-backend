@@ -31,67 +31,64 @@ def assign_tags(answers):
     tags = []
 
     if answers.get("Do you experience dry or flaky skin?") in ["Yes", "Sometimes", "Not sure"]:
-        tags.append("face-care")
+        tags.append("repair-moisturizer")
         if answers.get("Are you looking for a moisturizer suitable for sensitive or eczema-prone skin?") == "Yes":
-            tags.append("dry_skin")
+            tags += ["face-towels", "snail-nut", "prebiotic-lotion", "jelly-hydration"]
         if answers.get("Are you looking for a serum or mask that provides overnight hydration?") == "Yes":
-            tags.append("hydrating_mask")
+            tags += ["snail-nut", "purifying-gel", "collagen-mask", "deep-mask", "aloe-face"]
 
     # Acne
     if answers.get("Do you frequently deal with pimples, acne, blackheads, or clogged pores?") in ["Yes", "Sometimes", "Not sure"]:
-        tags.append("skin_health")
+        tags.append("daily-scrub")
         if answers.get("Are you interested in spot treatments or patches to reduce breakouts overnight?") == "Yes":
-            tags.append("acne")
+            tags += ["purifying-gel", "acne-patch", "spot-gel"]
         if answers.get("Would you be open to using salicylic acid or adapalene (retinoid) treatments for acne?") == "Yes":
-            tags.append("retinoid")
-
+            tags += ["2-bha", "adapalene-acne", "spot-gel"]
     # Sleep
     if answers.get("Do you have trouble falling asleep or staying asleep at night?") in ["Yes", "Sometimes", "Not sure"]:
-        tags.append("sleep")
+        tags.append("mouth-tape")
         if answers.get("Are you looking for a non-habit-forming sleep supplement?") == "Yes":
-            tags.append("sleep_supplement")
+            tags += ["sleeptabs-night", "melatonin-magnesium"]
         if answers.get("Are you interested in physical products (e.g., white noise machines or nasal strips) that promote better sleep?") == "Yes":
-            tags.append("sleep_aids")
+            tags += ["nasal-strips", "white-machine"]
 
     # Energy
     if answers.get("Do you experience low energy or fatigue during the day?") in ["Yes", "Sometimes", "Not sure"]:
-        tags.append("energy")
+        tags.append("ginkgo-biloba")
         if answers.get("Would you prefer gummies, capsules, or softgels for your energy supplements?") == "Yes":
-            tags.append("energy_gummies")
+            tags += ["b12-supplement", "caffeine-gummies", "apple-cider"]
         if answers.get("Are you looking for a caffeine-free energy booster?") == "Yes":
-            tags.append("caffeine_free_energy")
+            tags += ["caffeine-gummies", "apple-cider", "alpha-brain"]
 
     # Stress
     if answers.get("Are you looking to reduce your stress or anxiety levels?") in ["Yes", "Maybe", "Not sure"]:
-        tags.append("stress")
         if answers.get("Do you prefer ashwagandha or other adaptogens for managing stress??") == "Yes":
-            tags.append("ashwagandha")
+            tags += ["pure-ash", "ash-d"]
         if answers.get("Would you rather take stress support in gummy or capsule form?") == "Yes":
-            tags.append("stress_gummies")
+            tags += ["pure-ash", "ash-d"]
 
     # Eye care
     if answers.get("Are your eyes dry, red, or irritated frequently??") in ["Almost daily", "Occasionally", "Not sure"]:
-        tags.append("eyes")
         if answers.get("Are you interested in products that reduce puffiness or dark circles under your eyes?") == "Yes":
-            tags.append("eye_care")
+            tags += ["50-vision", "gold-mask"]
         if answers.get("Do you prefer eye drops or under-eye patches for your routine?") == "Yes":
-            tags.append("eye_drops")
+            tags += ["gold-mask", "redness-relief"]
 
     # Hair care
     if answers.get("Do you struggle with hair loss or frizzy/dry hair?") in ["Almost daily", "Occasionally", "Not sure"]:
-        tags.append("hair")
+        tags.append("bio-skin")
         if answers.get("Do you want to boost hair growth or thickness using supplements?") == "Yes":
-            tags.append("hair_growth")
+            tags += ["liquid-biotin", "keratin-boost"]
         if answers.get("Are you looking for products that improve your hair's shine and smoothness?") == "Yes":
-            tags.append("hair_smoothness")
+            tags += ["glossing-hair", "dream-coat", "liquid-biotin"]
 
     # Minimalist
     if answers.get("Are you a minimalist who prefers a simple, low-maintenance routine?") in ["Yes", "Maybe", "Not sure"]:
-        tags.append("convenient")
+        tags.append("foaming-body")
         if answers.get("Would you like recommendations for versatile products (e.g., facial cleansers that double as makeup removers)?") == "Yes":
-            tags.append("minimalist_cleanser")
+            tags += ["contact-solution", "pink-tape", "micropore-tape", "coco-nut"]
         if answers.get("Are you looking for travel-friendly or multi-use products?") == "Yes":
-            tags.append("travel_friendly")
+            tags += ["contact-solution", "pink-tape", "micropore-tape", "plum-lip"]
 
     return tags
 
