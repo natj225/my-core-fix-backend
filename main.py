@@ -21,7 +21,8 @@ PRODUCTS = [
       "Promotes hygienic face cleansing",
       "Gentle for sensitive skin",
       "Perfect for travel and on-the-go"
-    ]
+    ],
+    "rating": "4.8"
   },
   {
     "tag": "mouth-tape",
@@ -35,7 +36,8 @@ PRODUCTS = [
       "Gentle on sensitive skin",
       "Hypoallergenic and safe",
       "Perfect for daily and medical use"
-    ]
+    ],
+    "rating": "4.7"
   },
   {
     "tag": "b12-supplement",
@@ -49,7 +51,8 @@ PRODUCTS = [
       "Boosts daily energy levels",
       "Supports healthy metabolism",
       "Easy-to-swallow softgels"
-    ]
+    ],
+    "rating": "4.7"
   },
   {
     "tag": "ginkgo-biloba",
@@ -63,7 +66,8 @@ PRODUCTS = [
       "Enhances memory and recall",
       "Promotes mental clarity",
       "Supports brain health"
-    ]
+    ],
+    "rating": "4.6"
   },
   {
     "tag": "caffeine-gummies",
@@ -77,7 +81,8 @@ PRODUCTS = [
       "Natural energy without jitters",
       "Delicious and easy to take",
       "Caffeine-free formula"
-    ]
+    ],
+    "rating": "4.5"
   },
   {
     "tag": "contact-solution",
@@ -91,7 +96,8 @@ PRODUCTS = [
       "Cleans and disinfects lenses",
       "Keeps contacts comfortable",
       "Suitable for all lens types"
-    ]
+    ],
+    "rating": "4.9"
   },
   {
     "tag": "50-vision",
@@ -105,7 +111,8 @@ PRODUCTS = [
       "Supports long-term eye health",
       "Rich in lutein and omega-3",
       "Formulated for 50+ adults"
-    ]
+    ],
+    "rating": "4.6"
   },
   {
     "tag": "gold-mask",
@@ -119,7 +126,8 @@ PRODUCTS = [
       "Reduces puffiness and dark circles",
       "Soothes and hydrates under-eyes",
       "Quick results in minutes"
-    ]
+    ],
+    "rating": "4.3"
   },
   {
     "tag": "redness-relief",
@@ -133,7 +141,8 @@ PRODUCTS = [
       "Fast relief from redness",
       "Lasts up to 8 hours",
       "Brightens tired eyes"
-    ]
+    ],
+    "rating": "4.7"
   },
   {
     "tag": "2-bha",
@@ -147,7 +156,8 @@ PRODUCTS = [
       "Clears and refines pores",
       "Minimizes blackheads",
       "Smooths skin texture"
-    ]
+    ],
+    "rating": "4.5"
   },
   {
     "tag": "adapalene-acne",
@@ -161,7 +171,8 @@ PRODUCTS = [
       "Fights breakouts fast",
       "Improves skin clarity",
       "Recommended by dermatologists"
-    ]
+    ],
+    "rating": "4.5"
   },
   {
     "tag": "glossing-hair",
@@ -175,7 +186,8 @@ PRODUCTS = [
       "Boosts shine instantly",
       "Tames frizz and flyaways",
       "Deeply hydrates dry hair"
-    ]
+    ],
+    "rating": "4.4"
   },
   {
     "tag": "dream-coat",
@@ -189,7 +201,8 @@ PRODUCTS = [
       "Controls frizz in any weather",
       "Adds sleek, shiny finish",
       "Award-winning humidity protection"
-    ]
+    ],
+    "rating": "4.7"
   },
   {
     "tag": "snail-nut",
@@ -203,7 +216,8 @@ PRODUCTS = [
       "Deeply hydrates skin",
       "Promotes skin repair",
       "Boosts natural glow"
-    ]
+    ],
+    "rating": "4.5"
   },
   {
     "tag": "purifying-gel",
@@ -217,7 +231,8 @@ PRODUCTS = [
       "Effectively removes dirt and oil",
       "Non-stripping formula",
       "Infused with niacinamide"
-    ]
+    ],
+    "rating": "4.7"
   },
   {
     "tag": "repair-moisturizer",
@@ -231,7 +246,8 @@ PRODUCTS = [
       "Strengthens skin barrier",
       "Long-lasting hydration",
       "Comforts sensitive skin"
-    ]
+    ],
+    "rating": "4.6"
   },
   {
     "tag": "jelly-hydration",
@@ -245,7 +261,8 @@ PRODUCTS = [
       "Boosts moisture instantly",
       "Lightweight, non-greasy feel",
       "Restores healthy skin glow"
-    ]
+    ],
+    "rating": "4.4"
   },
   {
     "tag": "collagen-mask",
@@ -259,7 +276,8 @@ PRODUCTS = [
       "Renews skin while you sleep",
       "Boosts elasticity and hydration",
       "Easy peel-off application"
-    ]
+    ],
+    "rating": "4.6"
   },
   {
     "tag": "deep-mask",
@@ -273,7 +291,8 @@ PRODUCTS = [
       "Provides intense skin hydration",
       "Visibly plumps and smooths",
       "Reduces appearance of pores"
-    ]
+    ],
+    "rating": "4.4"
   },
   {
     "tag": "acne-patch",
@@ -287,7 +306,8 @@ PRODUCTS = [
       "Shrinks pimples overnight",
       "Protects healing blemishes",
       "Discreet and easy to use"
-    ]
+    ],
+    "rating": "4.6"
   },
   {
     "tag": "sleeptabs-night",
@@ -301,7 +321,8 @@ PRODUCTS = [
       "Promotes restful sleep",
       "Non-habit forming formula",
       "Helps you wake up refreshed"
-    ]
+    ],
+    "rating": "4.6"
   },
   {
     "tag": "melatonin-magnesium",
@@ -315,7 +336,8 @@ PRODUCTS = [
       "Supports deep, natural sleep",
       "Combines melatonin and magnesium",
       "Restores healthy sleep cycle"
-    ]
+    ],
+    "rating": "4.1"
   },
   {
     "tag": "apple-cider",
@@ -329,7 +351,8 @@ PRODUCTS = [
       "Supports energy naturally",
       "With apple cider & B12",
       "Vegan and delicious"
-    ]
+    ],
+    "rating": "4.4"
   },
   {
     "tag": "alpha-brain",
@@ -343,7 +366,8 @@ PRODUCTS = [
       "Improves focus and clarity",
       "Clinically tested nootropic",
       "Supports faster thinking"
-    ]
+    ],
+    "rating": "4.1"
   },
   {
     "tag": "nasal-strips",
@@ -357,7 +381,8 @@ PRODUCTS = [
       "Opens nasal passages",
       "Relieves congestion quickly",
       "Improves sleep quality"
-    ]
+    ],
+    "rating": "4.2"
   },
   {
     "tag": "pure-ash",
@@ -371,7 +396,8 @@ PRODUCTS = [
       "Balances mood and stress",
       "Organic adaptogen formula",
       "Supports daily wellbeing"
-    ]
+    ],
+    "rating": "4.7"
   },
   {
     "tag": "ash-d",
@@ -385,7 +411,8 @@ PRODUCTS = [
       "Reduces stress & anxiety",
       "Supports immune health",
       "Delicious berry flavor"
-    ]
+    ],
+    "rating": "4.5"
   },
   {
     "tag": "bio-skin",
@@ -399,7 +426,8 @@ PRODUCTS = [
       "Supports hair and nail growth",
       "Promotes glowing skin",
       "High potency biotin formula"
-    ]
+    ],
+    "rating": "4.6"
   },
   {
     "tag": "liquid-biotin",
@@ -413,7 +441,8 @@ PRODUCTS = [
       "Thickens hair naturally",
       "Supports radiant skin",
       "Easy-absorb liquid formula"
-    ]
+    ],
+    "rating": "4.5"
   },
   {
     "tag": "keratin-boost",
@@ -427,7 +456,8 @@ PRODUCTS = [
       "Boosts hair, skin & nails",
       "Triple-action ingredients",
       "Promotes elasticity and strength"
-    ]
+    ],
+    "rating": "4.5"
   },
   {
     "tag": "pink-tape",
@@ -441,7 +471,8 @@ PRODUCTS = [
       "Pain-free removal",
       "Strong, secure hold",
       "Multipurpose use"
-    ]
+    ],
+    "rating": "4.9"
   },
   {
     "tag": "micropore-tape",
@@ -455,7 +486,8 @@ PRODUCTS = [
       "Soft and breathable",
       "Safe for sensitive skin",
       "Ideal for medical or home use"
-    ]
+    ],
+    "rating": "4.6"
   },
   {
     "tag": "coco-nut",
@@ -469,7 +501,8 @@ PRODUCTS = [
       "Gently exfoliates skin",
       "Nourishing coconut scent",
       "Leaves skin soft and smooth"
-    ]
+    ],
+    "rating": "4.7"
   },
   {
     "tag": "foaming-body",
@@ -484,6 +517,8 @@ PRODUCTS = [
       "Fragrance-free formula",
       "Safe for face and body"
     ]
+      ,
+    "rating": "4.6"
   },
   {
     "tag": "prebiotic-lotion",
@@ -497,7 +532,8 @@ PRODUCTS = [
       "48-hour long-lasting moisture",
       "Non-greasy, lightweight feel",
       "Prebiotic oat for sensitive skin"
-    ]
+    ],
+    "rating": "4.7"
   },
   {
     "tag": "white-machine",
@@ -511,7 +547,8 @@ PRODUCTS = [
       "Promotes restful sleep anywhere",
       "Multiple soothing sound options",
       "Portable and travel-friendly"
-    ]
+    ],
+    "rating": "4.6"
   },
   {
     "tag": "plum-lip",
@@ -525,7 +562,8 @@ PRODUCTS = [
       "Rich, vibrant plum color",
       "Long-lasting hydration",
       "Universally flattering shade"
-    ]
+    ],
+    "rating": "4.6"
   },
   {
     "tag": "spot-gel",
@@ -539,7 +577,8 @@ PRODUCTS = [
       "Targets breakouts fast",
       "Maximum strength formula",
       "Minimizes acne overnight"
-    ]
+    ],
+    "rating": "4.6"
   },
   {
     "tag": "daily-scrub",
@@ -553,7 +592,8 @@ PRODUCTS = [
       "Deeply cleans pores",
       "Oil-free gentle formula",
       "Smooths and refines skin"
-    ]
+    ],
+    "rating": "4.6"
   },
 
   {
@@ -568,7 +608,8 @@ PRODUCTS = [
             "Instantly hydrates skin",
             "Soothes redness and irritation",
             "Suitable for all skin types"
-        ]
+        ],
+    "rating": "4.5"
   }
 ]
 
