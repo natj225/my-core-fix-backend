@@ -617,6 +617,7 @@ PRODUCTS = [
 def assign_tags(answers):
     tags = []
 
+    # Skincare
     if answers.get("Do you experience dryness or irritation on your skin?") in ["Yes", "Sometimes", "Not sure"]:
         tags.append("repair-moisturizer")
         if answers.get("Do you find your skin reacts easily to new products or changes in weather?") == "Yes":
@@ -631,8 +632,9 @@ def assign_tags(answers):
             tags += ["purifying-gel", "acne-patch", "spot-gel"]
         if answers.get("Are you generally open to ingredients that help with skin clarity over time?") == "Yes":
             tags += ["2-bha", "adapalene-acne", "spot-gel"]
+
     # Sleep
-    if answers.get("Do you find it difficult to get restful, uninterrupted sleep?") in ["Yes", "Sometimes", "Not sure"]:
+    if answers.get("Do you find it difficult to get restful, uninterrupted sleep?") in ["Often", "Sometimes", "Not sure"]:
         tags.append("mouth-tape")
         if answers.get("Do you prefer to avoid stimulants or habit-forming substances at night?") == "Yes":
             tags += ["sleeptabs-night", "melatonin-magnesium"]
@@ -645,24 +647,26 @@ def assign_tags(answers):
         if answers.get("Are you generally open to small daily habits that support energy naturally?") == "Yes":
             tags += ["b12-supplement", "caffeine-gummies", "apple-cider"]
         if answers.get("Would you prefer to avoid relying on caffeine or sugar-based energy boosts?") == "Yes":
-            tags += ["caffeine-gummies", "apple-cider", "alpha-brain"]
+            tags += ["apple-cider", "alpha-brain"]  # removed caffeine-gummies from here since they conflict
 
     # Stress
-    if answers.get("Do you often feel mentally overwhelmed or physically tense?") in ["Yes", "Maybe", "Not sure"]:
+    if answers.get("Do you often feel mentally overwhelmed or physically tense?") in ["Often", "Sometimes", "Not sure"]:
+        tags.append("pure-ash")  # add a default tag if stressed
         if answers.get("Have you found certain herbs or daily rituals helpful in calming your system?") == "Yes":
             tags += ["pure-ash", "ash-d"]
         if answers.get("Do you tend to lean toward simpler formats like capsules or gummies when managing stress?") == "Yes":
             tags += ["pure-ash", "ash-d"]
 
     # Eye care
-    if answers.get("Are your eyes often dry, irritated, or tired-feeling?") in ["Almost daily", "Occasionally", "Not sure"]:
+    if answers.get("Do your eyes often feel dry, irritated, or tired?") in ["Frequently", "Occasionally", "Not sure"]:
+        tags.append("redness-relief")
         if answers.get("Do you ever notice puffiness or darkness under your eyes at certain times?") == "Yes":
             tags += ["50-vision", "gold-mask"]
         if answers.get("Do you tend to prefer solutions that offer either a quick refresh or lasting relief?") == "Yes":
             tags += ["gold-mask", "redness-relief"]
 
     # Hair care
-    if answers.get("Have you noticed any changes in your hair’s volume, texture, or strength?") in ["Almost daily", "Occasionally", "Not sure"]:
+    if answers.get("Have you noticed changes in your hair’s volume, texture, or strength?") in ["Frequently", "Occasionally", "Not sure"]:
         tags.append("bio-skin")
         if answers.get("Would you be interested in approaches that support long-term hair resilience?") == "Yes":
             tags += ["liquid-biotin", "keratin-boost"]
@@ -670,7 +674,7 @@ def assign_tags(answers):
             tags += ["glossing-hair", "dream-coat", "liquid-biotin"]
 
     # Minimalist
-    if answers.get("Do you prefer to keep your personal care routine simple and streamlined?") in ["Yes", "Maybe", "Not sure"]:
+    if answers.get("Do you prefer to keep your personal care routine simple and streamlined?") in ["Yes", "Somewhat", "Not sure"]:
         tags.append("foaming-body")
         if answers.get("Do you find it helpful when one product serves multiple purposes?") == "Yes":
             tags += ["contact-solution", "pink-tape", "micropore-tape", "coco-nut"]
@@ -678,6 +682,7 @@ def assign_tags(answers):
             tags += ["contact-solution", "pink-tape", "micropore-tape", "plum-lip"]
 
     return tags
+
 
 def match_products(tags):
     return [product for product in PRODUCTS if product["tag"] in tags]
